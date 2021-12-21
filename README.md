@@ -62,6 +62,12 @@ You can deploy this bot anywhere.
 </p>
 </details>
 
+<details><summary>Deploy To Railway</summary>
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2FJoelkb%2FM4_adv_bot&envs=ADMINS%2CAPI_HASH%2CAPI_ID%2CAUTH_CHANNEL%2CAUTH_USERS%2CBOT_TOKEN%2CCACHE_TIME%2CCHANNELS%2CCOLLECTION_NAME%2CCUSTOM_FILE_CAPTION%2CDATABASE_NAME%2CDATABASE_URI%2CLOG_CHANNEL%2CPICS%2CSUPPORT_CHAT%2CUSE_CAPTION_FILTER&optionalEnvs=AUTH_USERS%2CCUSTOM_FILE_CAPTION&CACHE_TIMEDefault=300&COLLECTION_NAMEDefault=Movie_files&DATABASE_NAMEDefault=Cluster0&USE_CAPTION_FILTERDefault=True)
+
+</details>
+
 <details><summary>Deploy To VPS</summary>
 <p>
 <pre>
