@@ -114,8 +114,7 @@ async def start(client, message):
                      InlineKeyboardButton("🔖 ᴅᴏᴡɴʟᴏᴀᴅ ꜱᴜʙᴛɪᴛɪʟᴇ 🔖", url="https://t.me/subtitle_dl_bot")
                  ]
              ]
-        ),
-        parse_mode="markdown"
+        )
         )
                     
 
