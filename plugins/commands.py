@@ -19,8 +19,8 @@ async def start(client, message):
         buttons = [
             [
                 InlineKeyboardButton('🤴ʙᴏᴛ ᴏᴡɴᴇʀ🤴', url=f'https://t.me/creatorbeatz'),
-            InlineKeyboardButton('🍿Movie Group🍿', url='https://t.me/filmy_harbour')
-            ],[InlineKeyboardButton('💥 JOIN OUR MAIN CHANNEL 💥', url='https://t.me/+LJRsBp82HiJhNDhl')]
+            InlineKeyboardButton('🍿ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ🍿', url='https://t.me/filmy_harbour')
+            ],[InlineKeyboardButton('💥 ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 💥', url='https://t.me/+LJRsBp82HiJhNDhl')]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
@@ -36,8 +36,8 @@ async def start(client, message):
     if len(message.command) != 2:
         buttons = [[
             InlineKeyboardButton('🤴ʙᴏᴛ ᴏᴡɴᴇʀ🤴', url=f'https://t.me/creatorbeatz'),
-            InlineKeyboardButton('🍿Movie Group🍿', url='https://t.me/filmy_harbour')
-        ],[InlineKeyboardButton('💥 JOIN OUR MAIN CHANNEL 💥', url='https://t.me/+LJRsBp82HiJhNDhl')]]
+            InlineKeyboardButton('🍿ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ🍿', url='https://t.me/filmy_harbour')
+        ],[InlineKeyboardButton('💥 ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 💥', url='https://t.me/+LJRsBp82HiJhNDhl')]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
             photo=random.choice(PICS),
@@ -55,7 +55,7 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "🍿Join our Movie Request Group🍿", url=invite_link.invite_link
+                    "🍿ᴊᴏɪɴ ᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇsᴛ ɢʀᴏᴜᴘ🍿", url=invite_link.invite_link
                 )
             ]
         ]
@@ -72,8 +72,8 @@ async def start(client, message):
     if len(message.command) ==2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
             InlineKeyboardButton('🤴ʙᴏᴛ ᴏᴡɴᴇʀ🤴', url=f'https://t.me/creatorbeatz'),
-            InlineKeyboardButton('🍿Movie Group🍿', url='https://t.me/filmy_harbour')
-        ],[InlineKeyboardButton('💥 JOIN OUR MAIN CHANNEL 💥', url='https://t.me/+LJRsBp82HiJhNDhl')]]
+            InlineKeyboardButton('🍿ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ🍿', url='https://t.me/filmy_harbour')
+        ],[InlineKeyboardButton('💥 ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 💥', url='https://t.me/+LJRsBp82HiJhNDhl')]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
             photo=random.choice(PICS),
