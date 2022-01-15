@@ -119,7 +119,7 @@ async def advantage_spoll_choker(bot, query):
     if not movies:
         return await query.answer("You are clicking on an old button which is expired.", show_alert=True)
     movie = movies[(int(movie_))]
-    await query.answer('Checking for {query} in database...')
+    await query.answer('Checking for movie in database...')
     k = await manual_filters(bot, query.message, text=movie)
     if k==False:
         files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
@@ -127,7 +127,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('{query} Not Found In DataBase')
+            k = await query.message.edit('Movie Not Found In DataBase')
             await asyncio.sleep(10)
             await k.delete()
 
@@ -369,7 +369,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
-            await query.answer("I Like Your Smartness, But Don't Be Oversmart 😒",show_alert=True)
+            await query.answer("Join the group man! 😒",show_alert=True)
             return
         ident, file_id = query.data.split("#")
         files_ = await get_file_details(file_id)
@@ -670,7 +670,7 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("I couldn't find any movie related to {query}.")
+        k = await msg.reply("I couldn't find any movie related to that.")
         await asyncio.sleep(10)
         await k.delete()
         return
@@ -696,7 +696,7 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist)) # removing duplicates
     if not movielist:
-        k = await msg.reply("I couldn't find anything related to {query}. Please check the spelling on <a href='www.google.com/search'>google</a> or <a href='https://www.imdb.com/'>IMDb</a>...")
+        k = await msg.reply("I couldn't find anything related to that. Please check the spelling on <code>www.google.com/search</code> or <code>https://www.imdb.com/</code>")
         await asyncio.sleep(20)
         await k.delete()
         return
