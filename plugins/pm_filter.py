@@ -63,12 +63,9 @@ async def next_page(bot, query):
                [ InlineKeyboardButton(
                     text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
-            ],
+            ]
             for file in files
-           [
-            InlineKeyboardButton("dog", callback_data='dog'),
-            InlineKeyboardButton("cat", callback_data='cat'),
-        ]
+          
         ]
     else:
         btn = [
@@ -80,23 +77,11 @@ async def next_page(bot, query):
                     text=f"{get_size(file.file_size)}",
                     callback_data=f'files_#{file.file_id}',
                 ),
-            ],
+            ]
             for file in files
-           [
-            InlineKeyboardButton("dog", callback_data='dog'),
-            InlineKeyboardButton("cat", callback_data='cat'),
-        ]
+           
         ]
           
-def buttons(update, context):
-   query = update.callback_query
-
-    query.answer()
-
-    if query.data == 'cat':
-        context.bot.answer_callback_query(callback_query_id=query.id, text='you chose cat', show_alert=True)
-    elif query.data == 'dog':
-        context.bot.answer_callback_query(callback_query_id=query.id, text='you chose dog', show_alert=True
 
     if 0 < offset <= 10:
         off_set = 0
