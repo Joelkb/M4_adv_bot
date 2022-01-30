@@ -2,7 +2,8 @@
   <img src="assets/logo.jpg" alt="Eva Maria Logo">
 </p>
 <h1 align="center">
-  <b>M4 ADV Bot</b>
+  ## [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Lemon+milk&color=Y70000&lines=M4+ADV+BOT)](https://git.io/typing-svg)
+
 </h1>
 
 
