@@ -112,3 +112,8 @@ ALRT_TXT = """Hello {},
 This is not your movie request,
 
 Request your's..."""
+
+OLD_ALRT_TXT = """Hey {},
+You are using one of my old messages, 
+
+please send the request again."""
