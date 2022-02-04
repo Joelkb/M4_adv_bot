@@ -107,3 +107,8 @@ Added By - {}
 ID - <code>{}</code>
 Name - {}
 """
+
+ALRT_TXT = """Hello {},
+This is not your movie request,
+
+Request your's..."""
