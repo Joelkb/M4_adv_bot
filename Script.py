@@ -126,7 +126,6 @@ I_CUDNT = """I couldn't find any movie related to {}"""
 
 I_CUD_NT = """I couldn't find anything related to {}. Please check the spelling on Google or IMDb..."""
 
-MVE_NT_FND = """{} not found in Database...
-Please Mention this message by typing @admins as a reply to this message..."""
+MVE_NT_FND = """{} not found in Database..."""
 
 TOP_ALRT_MSG = """Checking for movie in database..."""
