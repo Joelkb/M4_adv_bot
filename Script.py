@@ -117,3 +117,7 @@ OLD_ALRT_TXT = """Hey {},
 You are using one of my old messages, 
 
 please send the request again."""
+
+CUDNT_FND = """I couldn't find anything related to {}
+
+Did you mean any one of these?"""
