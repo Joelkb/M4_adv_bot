@@ -128,3 +128,5 @@ I_CUD_NT = """I couldn't find anything related to {}. Please check the spelling 
 
 MVE_NT_FND = """{} not found in Database...
 Please Mention this message by typing @admins as a reply to this message..."""
+
+TOP_ALRT_MSG = """Checking for {} on Database..."""
