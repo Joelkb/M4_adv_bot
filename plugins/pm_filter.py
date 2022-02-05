@@ -122,7 +122,7 @@ async def advantage_spoll_choker(bot, query):
     if not movies:
         return await query.answer(OLD_ALRT_TXT.format(query.from_user.first_name), show_alert=True)
     movie = movies[(int(movie_))]
-    await query.answer(TOP_ALRT_MSG.format(search))
+    await query.answer(TOP_ALRT_MSG.format(query))
     k = await manual_filters(bot, query.message, text=movie)
     if k==False:
         files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
@@ -130,7 +130,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit(MVE_NT_FND.format(search))
+            k = await query.message.edit(MVE_NT_FND.format(query))
             await asyncio.sleep(10)
             await k.delete()
 
@@ -681,7 +681,7 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply(I_CUDNT.format(search))
+        k = await msg.reply(I_CUDNT.format(query))
         await asyncio.sleep(10)
         await k.delete()
         return
@@ -707,7 +707,7 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist)) # removing duplicates
     if not movielist:
-        k = await msg.reply(I_CUD_NT.format(search))
+        k = await msg.reply(I_CUD_NT.format(query))
         await asyncio.sleep(20)
         await k.delete()
         return
@@ -719,7 +719,7 @@ async def advantage_spell_chok(msg):
                 )
             ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    await msg.reply(CUDNT_FND.format(search), reply_markup=InlineKeyboardMarkup(btn))
+    await msg.reply(CUDNT_FND.format(query), reply_markup=InlineKeyboardMarkup(btn))
     
 
 async def manual_filters(client, message, text=False):
