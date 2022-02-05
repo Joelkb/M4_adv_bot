@@ -4,7 +4,7 @@ import re
 import ast
 
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
-from Script import script, ALRT_TXT, OLD_ALRT_TXT, CUDNT_FND
+from Script import script, ALRT_TXT, OLD_ALRT_TXT, CUDNT_FND, I_CUDNT, I_CUD_NT, MVE_NT_FND, TOP_ALRT_MSG
 import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, make_inactive
 from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, P_TTI_SHOW_OFF, IMDB, SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE, NOR_IMG
@@ -122,7 +122,7 @@ async def advantage_spoll_choker(bot, query):
     if not movies:
         return await query.answer(OLD_ALRT_TXT.format(query.from_user.first_name), show_alert=True)
     movie = movies[(int(movie_))]
-    await query.answer('Checking for movie in database...')
+    await query.answer(TOP_ALRT_MSG.format(search))
     k = await manual_filters(bot, query.message, text=movie)
     if k==False:
         files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
@@ -130,7 +130,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('Movie Not Found In DataBase')
+            k = await query.message.edit(MVE_NT_FND.format(search))
             await asyncio.sleep(10)
             await k.delete()
 
@@ -681,7 +681,7 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("I couldn't find any movie related to that.")
+        k = await msg.reply(I_CUDNT.format(search))
         await asyncio.sleep(10)
         await k.delete()
         return
@@ -707,7 +707,7 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist)) # removing duplicates
     if not movielist:
-        k = await msg.reply("I couldn't find anything related to that. Please check the spelling on Google or IMDb...")
+        k = await msg.reply(I_CUD_NT.format(search))
         await asyncio.sleep(20)
         await k.delete()
         return
@@ -719,7 +719,7 @@ async def advantage_spell_chok(msg):
                 )
             ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    await msg.reply(CUDNT_FND.format(query), reply_markup=InlineKeyboardMarkup(btn))
+    await msg.reply(CUDNT_FND.format(search), reply_markup=InlineKeyboardMarkup(btn))
     
 
 async def manual_filters(client, message, text=False):
